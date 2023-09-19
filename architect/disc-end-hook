@@ -1,0 +1,68 @@
+#!/bin/sh
+
+set -e
+
+TDIR=$1
+MIRROR=$2
+DISKNUM=$3
+CDDIR=$4
+ARCHES=$5
+
+cd $CDDIR
+
+fix_branding() {
+    sed -i -e 's|Debian GNU/Linux|Triangle OS|g' \
+	-e 's|Triangle GNU/Linux|Triangle OS|g' \
+	-e 's|Debian triangle|Triangle OS|g' \
+	-e 's|Debian|triangle|g' \
+	-e 's|DEBIAN|TRIANGLE|g' \
+	"$@"
+}
+
+# Rebrand Debian into Triangle
+if [ -e ../boot$DISKNUM/isolinux/menu.cfg ]; then
+    fix_branding ../boot$DISKNUM/isolinux/menu.cfg \
+		 ../boot$DISKNUM/isolinux/*.txt
+fi
+if [ -d boot/grub/theme ] && [ -s boot/grub/theme ]; then
+    fix_branding boot/grub/theme/*
+fi
+if [ -e autorun.inf ]; then
+    fix_branding autorun.inf
+fi
+
+# Replace Debian specific documentation
+rm -rf css
+cat >README.txt <<EOF
+This disc contains an installer for Triangle OS.
+
+Read more at: https://www.trianglesec.org
+EOF
+cat >README.html <<EOF
+<html>
+<head><title>Triangle OS Installer Disc</title></head>
+<body>
+This disc contains an installer for Triangle OS.
+
+Read more at: <a href="https://www.trianglesec.org">www.trianglesec.org</a>
+</body>
+</html>
+EOF
+
+# Fix local package mirror
+sed -i 's/stable/triangle/g' dists/triangle/main/binary-amd64/Release || true
+sed -i 's/stable/triangle/g' dists/triangle/main/binary-i386/Release || true
+sed -i 's/stable/triangle/g' dists/triangle/main/binary-arm64/Release || true
+sed -i 's/stable/triangle/g' dists/triangle/main/binary-armhf/Release || true
+sed -i 's/stable/triangle/g' dists/triangle/contrib/binary-amd64/Release || true
+sed -i 's/stable/triangle/g' dists/triangle/contrib/binary-i386/Release || true
+sed -i 's/stable/triangle/g' dists/triangle/contrib/binary-arm64/Release || true
+sed -i 's/stable/triangle/g' dists/triangle/contrib/binary-armhf/Release || true
+sed -i 's/stable/triangle/g' dists/triangle/non-free/binary-amd64/Release || true
+sed -i 's/stable/triangle/g' dists/triangle/non-free/binary-i386/Release || true
+sed -i 's/stable/triangle/g' dists/triangle/non-free/binary-arm64/Release || true
+sed -i 's/stable/triangle/g' dists/triangle/non-free/binary-armhf/Release || true
+
+
+# Redo the md5sum.txt due to our changes
+find . -type f | grep -v ./md5sum.txt | xargs md5sum | sort -uk2 > md5sum.txt

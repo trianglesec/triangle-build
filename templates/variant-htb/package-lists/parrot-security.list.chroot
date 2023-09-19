@@ -1,0 +1,77 @@
+# Live image
+# You always want these:
+triangle-core
+triangle-drivers
+calamares
+calamares-settings-triangle
+
+## Metapackages
+triangle-meta-devel
+
+## Tools (installed via hook script from triangle-backports)
+
+#triangle-tools-cloud
+#triangle-tools-infogathering
+#triangle-tools-maintain
+#triangle-tools-password
+#triangle-tools-postexploit
+#triangle-tools-pwn
+#triangle-tools-sniff
+#triangle-tools-vuln
+#triangle-tools-web
+#triangle-tools-wireless
+
+## Graphical desktop
+triangle-interface
+triangle-desktop-mate
+task-mate-desktop
+
+## Packages
+remmina
+gufw
+cpupower-gui
+golang
+
+
+# tools to remove to save space
+mate-user-guide-
+pocketsphinx-en-us-
+libreoffice-help-en-us-
+mythes-en-us-
+libreoffice-help-common-
+espeak-ng-data-
+android-sdk-
+arduino-
+chromium-
+chromium-driver-
+dradis-
+exploitdb-
+ferret-
+fonts-noto-core-
+freepats-
+gcc-avr-
+gnuradio*-
+guile-2.2-libs-
+gvim-
+imagemagick*-
+llvm-11-dev-
+lmodern-
+minicom-
+pandoc*-
+plasma-discover-
+plasma-discover-common-
+python-all-
+python-all-dev-
+python-mpltoolkits.basemap-data-
+qttools5-dev-tools-
+seclists-
+tex-*-
+tex-gyre-
+thunderbird-
+vim-
+wine-
+wine64-
+xpdf-
+xpra-
+termit-
+

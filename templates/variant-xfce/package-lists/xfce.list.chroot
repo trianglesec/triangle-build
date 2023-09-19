@@ -1,0 +1,14 @@
+# Live image
+# You always want these:
+triangle-core
+triangle-drivers
+calamares
+calamares-settings-triangle
+
+# Graphical desktop
+triangle-interface
+triangle-desktop-xfce
+task-xfce-desktop
+
+# Excluded packages
+chromium-

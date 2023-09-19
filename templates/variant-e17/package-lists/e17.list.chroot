@@ -1,0 +1,16 @@
+# Live image
+# You always want these:
+triangle-core
+triangle-drivers
+calamares
+calamares-settings-triangle
+
+# Metapackages
+
+
+# Graphical desktop
+enlightenment
+triangle-displaymanager
+suckless-tools
+qt5ct
+libeet-bin

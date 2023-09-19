@@ -1,0 +1,21 @@
+# Live image
+# You always want these:
+triangle-core
+triangle-drivers
+calamares
+calamares-settings-triangle
+
+# Metapackages
+
+
+# Graphical desktop
+triangle-interface
+triangle-desktop-kde
+task-kde-desktop
+
+# Extra packages
+codium
+
+# Excluded packages
+plasma-discover-
+plasma-discover-common-

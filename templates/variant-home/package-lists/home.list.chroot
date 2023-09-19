@@ -1,0 +1,35 @@
+# Live image
+# You always want these:
+triangle-core
+triangle-drivers
+calamares
+calamares-settings-triangle
+
+# Metapackages
+triangle-meta-devel
+triangle-meta-privacy
+triangle-meta-crypto
+
+# Graphical desktop
+triangle-interface
+triangle-interface-home
+triangle-desktop-mate
+task-mate-desktop
+
+# Extra packages
+codium
+golang-go
+nodejs
+npm
+default-jdk
+python3-pip
+git
+
+# Excluded packages
+chromium-
+mate-user-guide-
+pocketsphinx-en-us-
+libreoffice-help-en-us-
+mythes-en-us-
+libreoffice-help-common-
+espeak-ng-data-

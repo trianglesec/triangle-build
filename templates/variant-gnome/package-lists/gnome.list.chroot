@@ -1,0 +1,18 @@
+# Live image
+# You always want these:
+triangle-core
+triangle-drivers
+calamares
+calamares-settings-triangle
+
+# Metapackages
+triangle-meta-devel
+
+
+# Graphical desktop
+triangle-interface
+triangle-desktop-gnome
+task-gnome-desktop
+
+# Exclude packages
+chromium-

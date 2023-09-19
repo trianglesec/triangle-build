@@ -1,0 +1,33 @@
+# Full installer image
+# It should contain everything offered in tasksel
+# during initial installation
+
+# Metapackages
+triangle-core
+triangle-drivers
+
+# Utils
+triangle-meta-crypto
+triangle-meta-privacy
+triangle-meta-devel
+openssh-server
+tasksel
+gnupg2
+btrfs-progs
+openvpn
+wireguard
+
+# Tools
+triangle-tools-full
+
+
+# Graphical desktops
+triangle-interface
+triangle-interface-common
+triangle-desktop-mate
+triangle-desktop-i3
+triangle-desktop-kde
+triangle-desktop-xfce
+task-mate-desktop
+task-kde-desktop
+task-xfce-desktop
